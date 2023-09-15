@@ -1,39 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About</title>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('about')}}">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('post')}}">Post</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('product')}}">Product</a>
-              </li>
-              
-            </ul>
-          </div>
-        </div>
-      </nav>
+@extends('layout.layout')
+@section('title')
+    About
+@endsection
+@section('section')
+    <h1 class="text-center">About Us</h1>
 
-      <h1 class="text-center my-5">About Page</h1>
-</body>
-</html>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit doloremque officiis sunt distinctio! Sunt doloremque, velit veniam vero deserunt molestias. Tempore, temporibus saepe eaque labore sequi facere sapiente similique magni repellendus numquam id aliquid aut ut modi voluptas deserunt. Temporibus magni voluptates id quisquam velit quia tempore necessitatibus ad. Mollitia?</p>
+        </div>
+        <div class="col-6">
+          <img src="https://images.unsplash.com/photo-1454015023970-b40ecd2d6224?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D&w=1000&q=80" class="w-100" alt="" height="300">
+        </div>
+      </div>
+    </div>
+@endsection
+
+

@@ -1,43 +1,33 @@
 <?php
 
+use App\Http\Controllers\BasicController;
 use Illuminate\Support\Facades\Route;
 
 
-// url , function for page name
-Route::get('/', function () {
-    return view('welcome');
-});
 
-// url dena hai 
-Route::get('/home-page',function(){
-    // knsi file access krni hy
-    return view('home');
-})->name('home');
+Route::get('/', [BasicController::class, 'home'])->name('home');
+Route::get('/about-us-page', [BasicController::class, 'about'])->name('about');
+Route::get('/post-page', [BasicController::class, 'post'])->name('post');
+Route::get('/product', [BasicController::class, 'product'])->name('product');
 
-//  ye about url k lye hai 
-Route::get('/about-us-page', function () {
+Route::get('/user', [BasicController::class, 'user'])->name('contact.user');
 
-    // file 
-    return view('about');
+Route::get('/trash', [BasicController::class, 'trash'])->name('contact.deleted');
 
-    // about ek anme hai 
-})->name('about');
+Route::get('/delete/{id}', [BasicController::class, 'delete']);
 
-Route::get('/post', function () {
-    return view('post');
-})->name('post');
+// permenant delete 
+Route::get('/pdelete/{id}', [BasicController::class, 'pdelete']);
+Route::get('/restore/{id}', [BasicController::class, 'restore']);
 
-Route::get('/product', function () {
-    return view('product');
-})->name('product');
+Route::get('/edit/{id}', [BasicController::class, 'edit']);
+Route::post('/update/{id}', [BasicController::class, 'update']);
 
+Route::get('/contact', [BasicController::class, 'contact'])->name('contact');
 
+Route::post('/contact', [BasicController::class, 'form']);
 
+Route::get('/sessionDelete', [BasicController::class, 'sessionDelete']);
 
-// Route::get('/product/{id?}',function($id = null){
-//     return "<h1>Product $id </h1>";
-// })->whereIn('id',['art','movie','lawyer']);
-
-// ->whereAlphaNumeric('id')
-// ->whereAlpha('id')
-// ->whereNumber('id')
+Route::get('/file', [BasicController::class, 'fileView']);
+Route::post('/file', [BasicController::class, 'file']);
